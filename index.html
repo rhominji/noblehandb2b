@@ -2,37 +2,43 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <title>Title</title>
-    <style>
+    <title>노블핸드</title>
+    <style type="text/css">
+    @media all and (min-width:768px) and (max-width:1023px) {
          .main {
             min-width: 40%;
             max-width: 90%;
-            text-align:center;
-            padding: 10px;
+            padding-top: 10px;
+            padding-bottom: 20px;
             border-radius: 7px;;
-            background: #ffffff;}
+            background: #ffffff;
+            justify-content:center;}
 
          img{
             min-width:30%;
             max-width:70%;
-            height:auto;}
+            height:auto;
+            padding-left:5%;}
 
-        section {
-            display: none;
-            padding: 20px 0 0;
-            border-top: 1px solid #ddd;}
+        .nav-container{
+            width:100%;
+            background-color: white;
+            opacity:70%;
+            text-align:left;}
 
-
-        label {
+        li {
             display: inline-block;
             padding: 15px 25px;
             font-weight: 600;
-            font-color: white;
+            font-color: #ffffff;
             color: #160B34;
             border: 1px solid transparent;}
 
-        label:hover {
+        li a {color:black;}
+
+        li a:hover {
             color: #FF9CD4;
             cursor: pointer;}
 
@@ -41,6 +47,9 @@
         div#form_divs{
             margin-top:10px;
             margin-bottom:10px;}
+
+        label{
+            padding-left:4%;}
 
         input[type="text"]{
             width: 90%;
@@ -69,55 +78,104 @@
               border: 1px solid #ddd;
               border-top: 2px solid #160B34;
               border-bottom: 1px solid #ffffff;}
+    }
 
-        #tab1:checked ~ #content1,
-        #tab2:checked ~ #content2{
-            display: block;}
+    @media all and (max-width:767px) {
+        .main {
+            min-width: 40%;
+            max-width: 100%;
+            padding-top: 10px;
+            padding-bottom: 20px;
+            border-radius: 7px;;
+            background: #ffffff;
+            justify-content:center;}
 
-        .photo_box li{float:left;
-            position:relative;
-            width:30%;
-            margin-right:8px;
-            margin-bottom:30px
-            display:block;
-            list-style:none;}
-
-        .photo_box li.last{margin-right:0}
-        .photo_box li a strong{
-            display:block;overflow:hidden;
-            padding-right:8px;
-            white-space:nowrap;
-            text-overflow:ellipsis;
-            font-sizeL:14px;}
-
-        .photo_box p.thmb{margin-bottom:3px}
+         img{width:100%;
+            height:auto;
+            padding-left:5%;}
 
 
+        .nav-container{
+            width:100%;
+            background-color: white;
+            opacity:70%;
+            text-align:left;}
 
+        li {
+            display: inline-block;
+            padding: 15px 25px;
+            font-weight: 600;
+            font-color: #ffffff;
+            color: #160B34;
+            border: 1px solid transparent;}
+
+        li a {color:black;}
+
+        li a:hover {
+            color: #FF9CD4;
+            cursor: pointer;}
+
+            /*input 클릭시, label 스타일*/
+
+        div#form_divs{
+            margin-top:10px;
+            margin-bottom:10px;}
+
+        label{
+            padding-left:4%;}
+
+        input[type="text"]{
+            width: 90%;
+            height: auto;
+            padding-left:0.5em;
+            padding-top:0.5em;
+            padding-bottom:0.5em;
+            margin-left:2em;}
+
+        input[type="tel"]{
+            padding-left:0.5em;
+            padding-top:0.5em;
+            padding-bottom:0.5em;
+            margin-left:2em;}
+
+        textarea{
+            width: 90%;
+            padding-left:0.5em;
+            margin-left:2em;}
+
+        input[type="submit"]{
+            text-align:center;}
+
+        input:checked + label {
+              color: #555;
+              border: 1px solid #ddd;
+              border-top: 2px solid #160B34;
+              border-bottom: 1px solid #ffffff;}
+        }
     </style>
+
 </head>
 <body>
-<div class="main" style="text-align:left">
-    <input id="tab1" type="radio" name="tabs" checked style="display:None;">
-    <label for="tab1">대메뉴</label>
-
-    <input id="tab2" type="radio" name="tabs" style="display:None;">
-    <label for="tab2">사진갤러리</label>
-
-
-    <section id="content1" style="margin-bottom:20px; text-align:center">
-        <div id="img_box">
-            <img src="https://i.ibb.co/kB9W1qy/1.png" >
-            <img src="https://i.ibb.co/QdR0J8F/2.png" >
-            <img src="https://i.ibb.co/ryJQf1y/3.png" >
-            <img src="https://i.ibb.co/gmjXpDW/4.png" >
-            <img src="https://i.ibb.co/B4ZmNbC/5.png" >
-            <img src="https://i.ibb.co/zZQq5Zj/6.png" >
-            <img src="https://i.ibb.co/nQqgBZR/7.png" >
-            <img src="https://i.ibb.co/tPKyQg2/8.png" >
+<div class="main">
+    <ul class="nav-container" style="position:fixed; top:0;">
+        <li class="nav-item"><a href="#img1">홈</a></li>
+        <li class="nav-item"><a href="#img1-1">판촉물</a></li>
+        <li class="nav-item"><a href="#img1-2">가격</a></li>
+        <li class="nav-item"><a href="#form_box">상담문의</a></li>
+        <li class="nav-item" ><a href="gallary.html">사진갤러리</a></li>
+    </ul>
+    <div style="margin-top:40px; text-align:center;">
+        <div id="img_box" >
+            <img src="https://i.ibb.co/stw1S89/01.gif" id="img1" >
+            <img src="https://i.ibb.co/8cSGLQj/02.gif" id="img1-1" >
+            <img src="https://i.ibb.co/BjQGZpv/image.png" id="img1-2" >
+            <img src="https://i.ibb.co/tKxG4qm/04.gif" >
+            <img src="https://i.ibb.co/QH1yKgZ/05.gif" >
+            <img src="https://i.ibb.co/sgSZDtT/06.gif" >
+            <img src="https://i.ibb.co/Xzm4VXm/07.png" >
         </div>
 
-        <form  style="width=80%; padding-left:10px; padding-bottom:10px; text-align:left;">
+        <form  id="form_box" method="get" action="mail.php" style="width=80%; padding-left:10px; padding-bottom:10px; text-align:left;">
             <div id="form_divs">
                 <label for="business">상호명</label><br>
                 <input type="text" name= "business" id="business" >
@@ -143,44 +201,8 @@
                 <input type="submit" value="제출" class="btn btn-default">
             </div>
         </form>
+    </div>
 
-    </section>
-
-    <section id="content2" style="margin-bottom:20px;">
-        <div class="photo_box">
-            <div class="upload_area">
-                <input type="file" name="filename" align="right">
-            </div>
-            <ul style="padding-top:30px;">
-                <li> <!--게시판 한개 글-->
-                    <p class="thmb">
-                        <a href="#">
-                            <img src="https://i.ibb.co/kB9W1qy/1.png" alt="">
-                        </a>
-                    </p>
-                    <!--<a href="#"><strong>제목</strong></a>-->
-                </li>
-                <li> <!--게시판 한개 글-->
-                    <p class="thmb">
-                        <a href="#">
-                            <img src="https://i.ibb.co/kB9W1qy/1.png" alt="">
-                        </a>
-                    </p>
-                    <!--<a href="#"><strong>제목</strong></a>-->
-                </li>
-                <li> <!--게시판 한개 글-->
-                    <p class="thmb">
-                        <a href="#">
-                            <img src="https://i.ibb.co/kB9W1qy/1.png" alt="">
-                        </a>
-                    </p>
-                    <!--<a href="#"><strong>제목</strong></a>-->
-                </li>
-
-            </ul>
-        </div>
-
-    </section>
 
 </div>
 
